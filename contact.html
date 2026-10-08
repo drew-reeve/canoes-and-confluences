@@ -3,19 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Book a presentation | Canoes and Confluences</title>
-  <meta name="description" content="Request a presentation from Laurie for your school, museum, or group.">
+  <title>Book Laurie or get in touch | Canoes and Confluences</title>
+  <meta name="description" content="Book a presentation with historian Laurie Rudd or send a quick question.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Canoes and Confluences">
+  <meta property="og:title" content="Book Laurie or get in touch | Canoes and Confluences">
+  <meta property="og:description" content="Book a presentation with historian Laurie Rudd or send a quick question.">
+  <meta property="og:url" content="https://canoesandconfluences.com/contact.html">
+  <meta property="og:image" content="https://canoesandconfluences.com/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Libre+Franklin:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="wrap">
-      <a class="brand" href="index.html">Canoes and Confluences</a>
+      <a class="brand" href="/">Canoes and Confluences</a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav class="site-nav" id="site-nav" aria-label="Main">
         <ul>
@@ -23,7 +32,7 @@
           <li><a href="presentations.html">Presentations</a></li>
           <li><a href="lessons.html">Lessons</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="contact.html" aria-current="page">Book Laurie</a></li>
+          <li><a href="contact.html" aria-current="page" class="nav-cta">Book Laurie</a></li>
         </ul>
       </nav>
     </div>
@@ -32,8 +41,12 @@
   <main id="main">
     <section class="page-head">
       <div class="wrap">
-        <h1>Book a presentation</h1>
-        <p>Tell Laurie about your group and event. She'll reply within a few days with availability and pricing.</p>
+        <h1>Bring Laurie to your group</h1>
+        <p>Book a presentation, or just ask a question. Every message goes straight to Laurie.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#booking">Book a presentation</a>
+          <a class="btn btn-ghost" href="#question">Ask a quick question</a>
+        </div>
       </div>
       <svg class="confluence" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true" focusable="false">
       <path class="stream-a" d="M0 20 C 200 20, 320 60, 520 64" fill="none" stroke-width="3"/>
@@ -42,68 +55,217 @@
     </svg>
     </section>
 
-    <section class="section">
-      <div class="wrap">
-        <form class="form" name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+    <section class="section" id="booking">
+      <div class="wrap contact-layout">
+        <div>
+          <h2>Book a presentation</h2>
+          <p>The more you share, the faster Laurie can confirm details. Only a few fields are required.</p>
+
+          <form class="form" name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html?form=booking">
           <input type="hidden" name="form-name" value="booking">
+          <input type="hidden" name="subject" data-remove-prefix value="New booking request from canoesandconfluences.com">
           <p class="hidden-field"><label>Leave this empty <input name="bot-field"></label></p>
 
-          <div class="form-row">
-            <div><label for="name">Your name</label><input id="name" name="name" required autocomplete="name"></div>
-            <div><label for="email">Email</label><input id="email" type="email" name="email" required autocomplete="email"></div>
-          </div>
+          <fieldset>
+            <legend>About you</legend>
+            <div class="form-row">
+              <div><label for="name">Your name</label><input id="name" name="name" required autocomplete="name"></div>
+              <div><label for="email">Email</label><input id="email" type="email" name="email" required autocomplete="email"></div>
+            </div>
+            <div class="form-row">
+              <div><label for="organization">Organization <span class="optional">(optional)</span></label><input id="organization" name="Organization" autocomplete="organization"></div>
+              <div><label for="phone">Phone <span class="optional">(optional)</span></label><input id="phone" type="tel" name="Phone" autocomplete="tel"></div>
+            </div>
+          </fieldset>
 
-          <div class="form-row">
-            <div><label for="organization">Organization <span class="optional">(optional)</span></label><input id="organization" name="organization" autocomplete="organization"></div>
-            <div><label for="phone">Phone <span class="optional">(optional)</span></label><input id="phone" type="tel" name="phone" autocomplete="tel"></div>
-          </div>
+          <fieldset>
+            <legend>About the event</legend>
+            <div class="form-row">
+              <div>
+                <label for="event-type">Type of event</label>
+                <select id="event-type" name="Event type" required>
+                  <option value="">Choose one</option>
+                  <option>School or classroom</option>
+                  <option>Homeschool group or co-op</option>
+                  <option>Museum or historical society</option>
+                  <option>Library</option>
+                  <option>Conference or teacher training</option>
+                  <option>Outfitter or field trip (trail or river)</option>
+                  <option>River cruise or travel company</option>
+                  <option>Tour group</option>
+                  <option>Private or community group</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div>
+                <label for="program">Program</label>
+                <select id="program" name="Program">
+                  <option value="Not sure yet">Not sure yet</option>
+                  <optgroup label="In the field">
+                    <option value="Crossing the Bitterroots: The Lolo Trail" data-slug="lolo-trail">Crossing the Bitterroots: The Lolo Trail</option>
+                    <option value="The White Cliffs of the Missouri" data-slug="missouri-river">The White Cliffs of the Missouri</option>
+                  </optgroup>
+                  <optgroup label="On the river">
+                    <option value="Onboard lecture series" data-slug="river-cruise">Onboard lecture series</option>
+                  </optgroup>
+                  <optgroup label="Classroom and community">
+                    <option value="The Age of Exploration in the Northwest" data-slug="exploration">The Age of Exploration in the Northwest</option>
+                    <option value="Homelands: The Tribal Nations of the Northwest" data-slug="homelands">Homelands: The Tribal Nations of the Northwest</option>
+                    <option value="Idaho's Story" data-slug="idaho">Idaho's Story</option>
+                    <option value="The Lewis and Clark Expedition" data-slug="lewis-and-clark">The Lewis and Clark Expedition</option>
+                    <option value="The Oregon Trail" data-slug="oregon-trail">The Oregon Trail</option>
+                    <option value="Another topic" data-slug="custom">Another topic</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div><label for="dates">Preferred dates</label><input id="dates" name="Preferred dates" placeholder="e.g. a weekday in late March"></div>
+              <div>
+                <label for="length">Length</label>
+                <select id="length" name="Length">
+                  <option>Not sure yet</option>
+                  <option>One presentation (1 to 2 hours)</option>
+                  <option>Several presentations</option>
+                  <option>Multi-day event or trip</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div><label for="location">City and state</label><input id="location" name="Location"></div>
+              <div><label for="audience-size">Audience size</label><input id="audience-size" name="Audience size" inputmode="numeric" placeholder="Approximate"></div>
+            </div>
+            <div class="form-row">
+              <div><label for="audience-age">Audience age or grade <span class="optional">(optional)</span></label><input id="audience-age" name="Audience age or grade" placeholder="e.g. 4th grade, adults, mixed"></div>
+              <div>
+                <label for="format">Format</label>
+                <select id="format" name="Format">
+                  <option>In person</option>
+                  <option>On location (trail, river, or site)</option>
+                  <option>Online</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
 
-          <div class="form-row">
+          <fieldset>
+            <legend>Anything else</legend>
+            <div><label for="message">Topics, goals, or questions <span class="optional">(optional)</span></label><textarea id="message" name="Message" placeholder="Curriculum you're covering, topics of interest, accessibility needs"></textarea></div>
             <div>
-              <label for="event-type">Type of event</label>
-              <select id="event-type" name="event-type" required>
+              <label for="heard">How did you hear about Laurie? <span class="optional">(optional)</span></label>
+              <select id="heard" name="How they heard about Laurie">
                 <option value="">Choose one</option>
-                <option>School or classroom</option>
-                <option>Museum or historical society</option>
-                <option>Library</option>
-                <option>Conference or professional development</option>
-                <option>Tour group</option>
-                <option>Private or community group</option>
+                <option>Saw her present</option>
+                <option>American Cruise Lines</option>
+                <option>Lewis and Clark Trail Adventures</option>
+                <option>Colleague or friend</option>
+                <option>Search engine</option>
+                <option>YouTube or Instagram</option>
                 <option>Other</option>
               </select>
             </div>
-            <div>
-              <label for="program">Program</label>
-              <select id="program" name="program">
-                <option value="not-sure">Not sure yet</option>
-                <option value="lewis-and-clark">The Lewis and Clark Trail</option>
-                <option value="oregon-trail">The Oregon Trail</option>
-                <option value="custom">Custom program</option>
-              </select>
-            </div>
+            <div class="check">
+            <input type="checkbox" id="booking-optin" name="Join email list" value="yes">
+            <label for="booking-optin">Add me to Laurie's email list for new programs and lessons</label>
           </div>
-
-          <div class="form-row">
-            <div><label for="dates">Preferred dates</label><input id="dates" name="dates" placeholder="e.g. a weekday in late March"></div>
-            <div>
-              <label for="format">Format</label>
-              <select id="format" name="format">
-                <option>In person</option>
-                <option>Online</option>
-                <option>Either</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div><label for="location">City and state</label><input id="location" name="location"></div>
-            <div><label for="audience-size">Audience size</label><input id="audience-size" name="audience-size" inputmode="numeric" placeholder="Approximate"></div>
-          </div>
-
-          <div><label for="message">Anything else Laurie should know? <span class="optional">(optional)</span></label><textarea id="message" name="message" placeholder="Grade level, themes you're covering, budget, and so on"></textarea></div>
+          </fieldset>
 
           <div><button class="btn btn-primary" type="submit">Send booking request</button></div>
         </form>
+        </div>
+
+        <aside class="contact-aside" aria-label="Contact details and what happens next">
+          <h3>Contact Laurie</h3>
+          <ul class="contact-list">
+            <li><span>Email</span><a href="mailto:lars.rudd@gmail.com">lars.rudd@gmail.com</a></li>
+            <li><span>Phone</span><a href="tel:+12082017656">(208) 201-7656</a></li>
+            <li><span>Based in</span>Lewiston, Idaho</li>
+          </ul>
+          <p class="aside-note">In person across the Pacific Northwest, farther when travel costs are covered.</p>
+          <h3>What happens next</h3>
+          <ol class="steps">
+            <li><strong>Laurie replies within 3 business days</strong> with availability and a quote. It may take a little longer when she's out in the field.</li>
+            <li><strong>A short call or email</strong> to shape the program around your audience.</li>
+            <li><strong>You confirm the date</strong> and receive a simple agreement and any prep materials.</li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="question">
+      <div class="wrap">
+        <h2>Ask a quick question</h2>
+        <p>Not ready to book? Ask about programs, lessons, collaborations, or anything else.</p>
+        <form class="form" name="question" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html?form=question">
+          <input type="hidden" name="form-name" value="question">
+          <input type="hidden" name="subject" data-remove-prefix value="New question from canoesandconfluences.com">
+          <p class="hidden-field"><label>Leave this empty <input name="bot-field"></label></p>
+          <div class="form-row">
+            <div><label for="q-name">Your name</label><input id="q-name" name="name" required autocomplete="name"></div>
+            <div><label for="q-email">Email</label><input id="q-email" type="email" name="email" required autocomplete="email"></div>
+          </div>
+          <div>
+            <label for="q-topic">Topic</label>
+            <select id="q-topic" name="Topic">
+              <option>Presentations</option>
+              <option>Lessons and teaching resources</option>
+              <option>Media or interview request</option>
+              <option>Collaboration or partnership</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div><label for="q-message">Your question</label><textarea id="q-message" name="Message" required></textarea></div>
+          <div class="check">
+            <input type="checkbox" id="question-optin" name="Join email list" value="yes">
+            <label for="question-optin">Add me to Laurie's email list for new programs and lessons</label>
+          </div>
+          <div><button class="btn btn-teal" type="submit">Send question</button></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap">
+        <h2>Common questions</h2>
+        <div class="faq">
+          <details>
+            <summary>How much does a presentation cost?</summary>
+            <p>Fees depend on the length, format, and travel involved. Share a few details in the booking form and Laurie will reply with a quote.</p>
+          </details>
+          <details>
+            <summary>What topics can you cover?</summary>
+            <p>Any part of Pacific Northwest history. The programs listed are a starting point. Laurie is knowledgeable across the region's history, with a particular specialty in the age of exploration, and will shape a program to what you need.</p>
+          </details>
+          <details>
+            <summary>How long are programs?</summary>
+            <p>As long as you need. Anything from a focused 1 to 2 hour presentation on one subject to multi-day events with several presentations.</p>
+          </details>
+          <details>
+            <summary>Who are programs for?</summary>
+            <p>Everyone from 9 to 99. Laurie teaches K-12 classrooms, adult and community groups, cruise guests, and trip guests, and adapts each program to the people in front of her.</p>
+          </details>
+          <details>
+            <summary>How far will Laurie travel?</summary>
+            <p>Laurie is based in Lewiston, Idaho. She presents in person across the Pacific Northwest and will travel farther when travel costs are covered.</p>
+          </details>
+          <details>
+            <summary>Do you offer online programs?</summary>
+            <p>Sometimes. Get in touch with the details of your group and Laurie will let you know what's possible.</p>
+          </details>
+          <details>
+            <summary>What do we need to provide?</summary>
+            <p>Reasonable accommodations for the setting: a screen and projector where the space allows, or simply an open area for outdoor and field programs. Hosts also provide standard, reasonable compensation and, where needed, travel funding. Laurie brings her own hands-on materials, including the medicine chest.</p>
+          </details>
+          <details>
+            <summary>How far ahead should we book?</summary>
+            <p>As early as you can, especially for spring and summer dates. Shorter notice is sometimes possible, so it's always worth asking.</p>
+          </details>
+          <details>
+            <summary>Can programs fit our curriculum?</summary>
+            <p>Yes. School programs can be shaped around your grade level and your state's social studies standards. Mention what you're covering in the booking form.</p>
+          </details>
+        </div>
       </div>
     </section>
   </main>
@@ -113,20 +275,22 @@
       <div class="footer-grid">
         <div>
           <div class="footer-brand">Canoes and Confluences</div>
-          <p>History presentations and teaching resources from across the Pacific Northwest.</p>
+          <p>Laurie Rudd, historian and educator<br>Based in Lewiston, Idaho</p>
         </div>
+        <ul class="footer-contact">
+          <li><a href="mailto:lars.rudd@gmail.com">lars.rudd@gmail.com</a></li>
+          <li><a href="tel:+12082017656">(208) 201-7656</a></li>
+        </ul>
         <ul class="footer-links">
-          <!-- Replace # with Laurie's real profile links -->
-          <li><a href="#">YouTube</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          
+          <li><a href="/presentations.html">Presentations</a></li>
+          <li><a href="/contact.html">Contact</a></li>
         </ul>
       </div>
       <p class="copyright">&copy; 2026 Canoes and Confluences</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="/script.js"></script>
 </body>
 </html>
