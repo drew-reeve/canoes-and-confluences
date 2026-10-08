@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book a presentation | Canoes and Confluences</title>
+  <meta name="description" content="Request a presentation from Laurie for your school, museum, or group.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Libre+Franklin:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Canoes and Confluences</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="presentations.html">Presentations</a></li>
+          <li><a href="lessons.html">Lessons</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" aria-current="page">Book Laurie</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="wrap">
+        <h1>Book a presentation</h1>
+        <p>Tell Laurie about your group and event. She'll reply within a few days with availability and pricing.</p>
+      </div>
+      <svg class="confluence" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path class="stream-a" d="M0 20 C 200 20, 320 60, 520 64" fill="none" stroke-width="3"/>
+      <path class="stream-b" d="M0 110 C 220 110, 340 70, 520 64" fill="none" stroke-width="3"/>
+      <path class="stream-joined" d="M520 64 C 760 64, 900 40, 1200 52" fill="none" stroke-width="6" stroke-linecap="round"/>
+    </svg>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <form class="form" name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+          <input type="hidden" name="form-name" value="booking">
+          <p class="hidden-field"><label>Leave this empty <input name="bot-field"></label></p>
+
+          <div class="form-row">
+            <div><label for="name">Your name</label><input id="name" name="name" required autocomplete="name"></div>
+            <div><label for="email">Email</label><input id="email" type="email" name="email" required autocomplete="email"></div>
+          </div>
+
+          <div class="form-row">
+            <div><label for="organization">Organization <span class="optional">(optional)</span></label><input id="organization" name="organization" autocomplete="organization"></div>
+            <div><label for="phone">Phone <span class="optional">(optional)</span></label><input id="phone" type="tel" name="phone" autocomplete="tel"></div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="event-type">Type of event</label>
+              <select id="event-type" name="event-type" required>
+                <option value="">Choose one</option>
+                <option>School or classroom</option>
+                <option>Museum or historical society</option>
+                <option>Library</option>
+                <option>Conference or professional development</option>
+                <option>Tour group</option>
+                <option>Private or community group</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="program">Program</label>
+              <select id="program" name="program">
+                <option value="not-sure">Not sure yet</option>
+                <option value="lewis-and-clark">The Lewis and Clark Trail</option>
+                <option value="oregon-trail">The Oregon Trail</option>
+                <option value="custom">Custom program</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div><label for="dates">Preferred dates</label><input id="dates" name="dates" placeholder="e.g. a weekday in late March"></div>
+            <div>
+              <label for="format">Format</label>
+              <select id="format" name="format">
+                <option>In person</option>
+                <option>Online</option>
+                <option>Either</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div><label for="location">City and state</label><input id="location" name="location"></div>
+            <div><label for="audience-size">Audience size</label><input id="audience-size" name="audience-size" inputmode="numeric" placeholder="Approximate"></div>
+          </div>
+
+          <div><label for="message">Anything else Laurie should know? <span class="optional">(optional)</span></label><textarea id="message" name="message" placeholder="Grade level, themes you're covering, budget, and so on"></textarea></div>
+
+          <div><button class="btn btn-primary" type="submit">Send booking request</button></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Canoes and Confluences</div>
+          <p>History presentations and teaching resources from across the Pacific Northwest.</p>
+        </div>
+        <ul class="footer-links">
+          <!-- Replace # with Laurie's real profile links -->
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <p class="copyright">&copy; 2026 Canoes and Confluences</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
