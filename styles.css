@@ -529,3 +529,38 @@ legend + * { clear: both; }
 
 .footer-contact { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35rem; }
 .events .event-title a { color: var(--amber); }
+
+/* ---------- Landing page ---------- */
+#where, #what, #about, #contact { scroll-margin-top: 0.5rem; }
+
+.settings { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.setting { background: var(--birch); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; }
+.setting img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.setting h3 { margin: 1.25rem 1.25rem 0.5rem; color: var(--teal); }
+.setting p { margin: 0 1.25rem 1.25rem; flex: 1; }
+.setting .btn { margin: 0 1.25rem 1.5rem; align-self: flex-start; }
+@media (max-width: 860px) { .settings { grid-template-columns: 1fr; } }
+
+.chest { margin: 2.5rem 0 1rem; }
+.feature-title { font-size: var(--step-3); color: var(--teal); }
+
+.topics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: 2rem; border-top: 3px solid var(--teal); }
+.topic { padding: 1.5rem 1.5rem 1.5rem 0; border-bottom: 1px solid var(--line); }
+.topic h3 { font-size: var(--step-1); color: var(--dusk); }
+.topic p { margin: 0; }
+@media (max-width: 860px) { .topics { grid-template-columns: 1fr; } .topic { padding-right: 0; } }
+.note { margin-top: 1.5rem; font-size: var(--step-0); }
+#about .credentials { margin-top: 1.5rem; }
+
+/* Portrait-format main photo */
+.hero-photo img[src*="hero-laurie"] { aspect-ratio: 4 / 5; object-position: center 35%; max-height: 34rem; }
+@media (max-width: 860px) { .hero-photo img[src*="hero-laurie"] { aspect-ratio: 1 / 1; max-height: none; object-position: center 62%; } }
+.setting img[src*="classroom-beaver-pelt"] { object-position: center 25%; }
+.setting img[src*="trail-ridge"] { object-position: center 60%; }
+.setting img[src*="river-cruise-oregon-trail"] { object-position: center 15%; }
+.setting-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+.setting-photos img { aspect-ratio: 2 / 3; }
+.setting .setting-photos img[src*="trail-ridge"] { object-position: center 55%; }
+.chest-photo[src*="period-medicine-chest"] { object-position: center top; }
+.setting img[src*="river-driftwood-ship"] { object-position: center 30%; }
+.setting img[src*="river-driftwood-ship"] { object-position: center 55%; }

@@ -1,0 +1,9 @@
+# Old pages now live as sections of the home page
+/presentations.html   /#where     301
+/presentations        /#where     301
+/lessons.html         /#what      301
+/lessons              /#what      301
+/about.html           /#about     301
+/about                /#about     301
+/contact.html         /#contact   301
+/contact              /#contact   301

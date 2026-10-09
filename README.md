@@ -17,6 +17,11 @@ Search for `[` to find every bracketed placeholder: last name, bio, events, prog
 ## Video
 In index.html, swap the placeholder div for the YouTube iframe (instructions in the comment).
 
+## Site structure (single landing page)
+index.html holds everything: Where she teaches, What she teaches, About, Contact.
+Old page URLs (/presentations.html, /about.html, etc.) redirect via _redirects.
+There is one form, "contact". In Netlify notifications, use "Any form".
+
 ## Forms and email
 
 Four forms: booking, question, lesson-request, newsletter. Each email subject is built

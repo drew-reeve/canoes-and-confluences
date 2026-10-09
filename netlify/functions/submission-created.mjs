@@ -10,6 +10,7 @@
 //   SEND_CONFIRMATIONS  "true" to email the person a confirmation
 
 const FORM_LABELS = {
+  contact: 'New inquiry',
   booking: 'Booking request',
   question: 'Question',
   'lesson-request': 'Lesson request',
