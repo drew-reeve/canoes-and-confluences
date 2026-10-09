@@ -71,7 +71,7 @@
             <a class="btn btn-teal" href="/?setting=trail#contact">Plan a trail program</a>
           </article>
           <article class="setting">
-            <img src="images/river-driftwood-ship.jpg" alt="Laurie sitting atop a large driftwood log on a sandy riverbank, with an American Cruise Lines ship docked behind her" loading="lazy">
+            <div class="setting-photos"><img src="images/river-beach-ship.jpg" alt="Laurie walking along a sandy Columbia River beach with an American Cruise Lines riverboat behind her" loading="lazy"><img src="images/river-map-1803.jpg" alt="Laurie pointing to a map of the United States in 1803 during a talk aboard ship" loading="lazy"></div>
             <h3>On the river</h3>
             <p>Featured historian aboard American Cruise Lines voyages on the Columbia and Snake Rivers, now heading into her third season.</p>
             <a class="btn btn-teal" href="/?setting=river#contact">Plan a river program</a>
@@ -88,22 +88,20 @@
 
     <section class="section" id="what">
       <div class="wrap">
-        <h2>What Laurie teaches</h2>
-        <p class="lede">The whole story of the Northwest, beginning with the tribal nations whose homelands these have always been, and taught with care and respect alongside the explorers, traders, and settlers who came later.</p>
-
-        <div class="split chest">
-          <img class="chest-photo" src="images/period-medicine-chest.jpg" alt="Laurie in period dress on a riverbank, opening her medicine chest of bottles, instruments, and bandages" loading="lazy">
+        <div class="what-intro">
           <div>
-            <h3 class="feature-title">The Medicine Chest</h3>
-            <p>A hands-on lesson all its own. Laurie's chest holds the medicines, medical instruments, and treatments of the era, a mix of genuine period pieces and faithful reproductions, down to a bottle of Rush's Bilious Pills like the ones carried west by the Corps of Discovery. Audiences see and handle frontier medicine up close, and it's the lesson everyone remembers.</p>
-            <a class="btn btn-teal" href="/?setting=chest#contact">Ask about the Medicine Chest</a>
+            <h2>What Laurie teaches</h2>
+            <p class="lede">The whole story of the Northwest, beginning with the tribal nations whose homelands these have always been, and taught with care and respect alongside the explorers, traders, and settlers who came later.</p>
           </div>
+          <img src="images/teaching-columbia-map.jpg" alt="Laurie mid-story with arms spread wide in front of a hand-drawn expedition map of the Columbia River" loading="lazy">
         </div>
 
         <div class="topics">
           <div class="topic"><h3>Tribal homelands</h3><p>The Nimiipuu (Nez Perce), Shoshone-Bannock, Coeur d'Alene, Salish, and other nations of the region, and their side of the story.</p></div>
-          <div class="topic"><h3>The age of exploration</h3><p>Voyages to the Northwest coast, the search for the Columbia, and the fur trade. A particular specialty.</p></div>
+          <div class="topic"><h3>The age of exploration</h3><p>Voyages to the Northwest coast and the search for the Columbia. A particular specialty.</p></div>
           <div class="topic"><h3>Lewis and Clark</h3><p>The Corps of Discovery's journey across the Northwest, including the Lolo Trail crossing.</p></div>
+          <div class="topic"><h3>Lewis and Clark medicine</h3><p>The medicines, instruments, and treatments the expedition carried, from Rush's Bilious Pills to lancets, taught hands-on with Laurie's chest of period pieces and reproductions.</p></div>
+          <div class="topic"><h3>Mountain men and the fur trade</h3><p>Trappers, traders, and the rendezvous, the yearly gatherings where furs, supplies, and stories changed hands across the Rockies.</p></div>
           <div class="topic"><h3>Idaho history</h3><p>How Idaho came to be, from Native homelands to mining rushes and statehood.</p></div>
           <div class="topic"><h3>The Oregon Trail</h3><p>What it really took to cross two thousand miles by wagon, and what changed when emigrants arrived.</p></div>
           <div class="topic"><h3>Any topic you need</h3><p>Laurie knows the region's history broadly and will shape a program to your audience.</p></div>
@@ -134,14 +132,14 @@
 
     <section class="section" id="about">
       <div class="wrap split">
-        <img class="portrait" src="images/laurie-portrait.jpg" alt="Laurie Hayes smiling outdoors in front of grassy hills" width="1071" height="1600" loading="lazy">
+        <img class="portrait" src="images/about-mountain-selfie.jpg" alt="Laurie Hayes smiling on a mountain ridge, with fall color and forested ridgelines behind her" loading="lazy">
         <div>
           <!-- First-person draft for Laurie to approve or rewrite -->
           <h2>About Laurie</h2>
           <p>I'm Laurie Hayes, a historian and educator from Lewiston, Idaho, right where the Clearwater meets the Snake. Past audiences and partners may know me as Laurie Rudd.</p>
           <p>I teach the layered history of the Pacific Northwest, with a special love for the age of exploration and for Idaho, especially the Lolo Trail. The tribal nations of this region have lived here since time immemorial, and teaching their side of the story with respect is at the heart of everything I do. The name Canoes and Confluences comes from my belief that the best way to understand this history is to get out in it: paddle the rivers, walk the trails, and stand where it happened.</p>
           <ul class="credentials">
-            <li>Degree in history and political science, BYU-Idaho</li>
+            <li>Degrees in history and political science</li>
             <li>Nearly a decade of teaching, from classrooms to the field</li>
             <li>Featured historian, American Cruise Lines</li>
             <li>Field crew, Lolo Reconnected Project with the Lewis and Clark Trail Alliance</li>
@@ -152,7 +150,7 @@
       <script type="application/ld+json">
       {"@context":"https://schema.org","@type":"Person","name":"Laurie Hayes","alternateName":"Laurie Rudd",
         "jobTitle":"Historian and educator","url":"https://canoesandconfluences.com/",
-        "address":{"@type":"PostalAddress","addressLocality":"Lewiston","addressRegion":"ID"},"alumniOf":"BYU-Idaho"}
+        "address":{"@type":"PostalAddress","addressLocality":"Lewiston","addressRegion":"ID"}}
       </script>
     </section>
 
@@ -192,7 +190,6 @@
                 <option value="On the trail" data-slug="trail">On the trail</option>
                 <option value="On the river" data-slug="river">On the river</option>
                 <option value="In the classroom" data-slug="classroom">In the classroom</option>
-                <option value="The Medicine Chest" data-slug="chest">The Medicine Chest</option>
               </select>
             </div>
             <div>
@@ -205,7 +202,7 @@
         <aside class="contact-aside" aria-label="Contact details">
           <h3>Contact Laurie</h3>
           <ul class="contact-list">
-            <li><span>Email</span><a href="mailto:lars.rudd@gmail.com">lars.rudd@gmail.com</a></li>
+            <li><span>Email</span><a href="mailto:canoesandconfluences@gmail.com">canoesandconfluences@gmail.com</a></li>
             <li><span>Phone</span><a href="tel:+12082017656">(208) 201-7656</a></li>
             <li><span>Instagram</span><a href="https://www.instagram.com/canoesandconfluences/">@canoesandconfluences</a></li>
             <li><span>Based in</span>Lewiston, Idaho</li>
@@ -224,7 +221,7 @@
           <p>Laurie Hayes (formerly Laurie Rudd)<br>Historian and educator, based in Lewiston, Idaho</p>
         </div>
         <ul class="footer-contact">
-          <li><a href="mailto:lars.rudd@gmail.com">lars.rudd@gmail.com</a></li>
+          <li><a href="mailto:canoesandconfluences@gmail.com">canoesandconfluences@gmail.com</a></li>
           <li><a href="tel:+12082017656">(208) 201-7656</a></li>
         </ul>
         <ul class="footer-links">

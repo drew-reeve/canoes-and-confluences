@@ -61,7 +61,7 @@ async function send(apiKey, body) {
 }
 
 export const handler = async (event) => {
-  const { RESEND_API_KEY, FROM_EMAIL, NOTIFY_TO = 'lars.rudd@gmail.com', SEND_CONFIRMATIONS } = process.env;
+  const { RESEND_API_KEY, FROM_EMAIL, NOTIFY_TO = 'canoesandconfluences@gmail.com', SEND_CONFIRMATIONS } = process.env;
   if (!RESEND_API_KEY || !FROM_EMAIL) return { statusCode: 200, body: 'Email not configured' };
 
   const { payload } = JSON.parse(event.body);

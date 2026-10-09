@@ -30,7 +30,7 @@ from the form contents (script.js), e.g.
 
 ### Level 1: Netlify notifications (works now, no extra accounts)
 Project configuration > Notifications > Emails and webhooks > Form submission notifications
-> Add notification > Email notification. Pick "Any form", send to Laurie's email.
+> Add notification > Email notification. Pick "Any form", send to canoesandconfluences@gmail.com.
 Every submission is also saved in the Netlify Forms tab and can be exported as CSV.
 
 ### Level 2: formatted emails + automatic confirmations (optional)
@@ -40,7 +40,7 @@ person who wrote in, and an optional "we got your request" email to them.
 2. Resend lists a few DNS records. Add them in Netlify: Domains > canoesandconfluences.com > DNS settings.
 3. In Netlify, Project configuration > Environment variables, add:
    RESEND_API_KEY, FROM_EMAIL (e.g. Canoes and Confluences <hello@canoesandconfluences.com>),
-   NOTIFY_TO (lars.rudd@gmail.com), SEND_CONFIRMATIONS (true)
+   NOTIFY_TO (canoesandconfluences@gmail.com), SEND_CONFIRMATIONS (true)
 4. Redeploy. Then turn off the Level 1 email notification so Laurie doesn't get two emails.
 Until those variables exist, the function does nothing.
 
